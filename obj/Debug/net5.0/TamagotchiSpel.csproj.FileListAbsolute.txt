@@ -1,0 +1,16 @@
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.exe
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.deps.json
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.runtimeconfig.json
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.runtimeconfig.dev.json
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.dll
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\ref\TamagotchiSpel.dll
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\bin\Debug\net5.0\TamagotchiSpel.pdb
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.csproj.AssemblyReference.cache
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.AssemblyInfoInputs.cache
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.AssemblyInfo.cs
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.csproj.CoreCompileInputs.cache
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.dll
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\ref\TamagotchiSpel.dll
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.pdb
+C:\Users\herreraalgotsson.ad\github-classroom\TE20C-spel-prog-2\OOP\TamagotchiSpel\obj\Debug\net5.0\TamagotchiSpel.genruntimeconfig.cache
