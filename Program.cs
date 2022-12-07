@@ -14,10 +14,11 @@ namespace TamagotchiSpel
 
             Tamagotchi tamagotchi = new Tamagotchi();
             DateTime latestTick = DateTime.Now;
+            bool svaradeRätt = true;
 
             while (true)
             {
-                bool svaradeRätt = true;
+                //Skriver ut meny alternativen
                 Console.WriteLine("-------------------------");
                 Console.WriteLine("1. Skapa ny tamagochi");
                 Console.WriteLine("2. Mata tamagochi");
@@ -30,6 +31,7 @@ namespace TamagotchiSpel
 
                 switch (val)
                 {
+                    //Skapa
                     case "1":
                         //Frågar efter namn och ser till så att namnet inte är tomt
                         string name = ForceFullWord("Vad vill du döpa din tamagochi? ");
@@ -37,21 +39,33 @@ namespace TamagotchiSpel
                         //Sätter instansens namn
                         tamagotchi.name = name;
                         break;
+
+                    //Mata
                     case "2":
                         tamagotchi.Feed();
                         break;
+
+                    //Hälsa
                     case "3":
                         tamagotchi.Hi();
                         break;
+
+                    //Teach
                     case "4":
                         string word = ForceFullWord($"Vilket ord vill du lära {tamagotchi.name}? ");
                         tamagotchi.Teach(word);
                         break;
+
+                    //Skriv ut stats
                     case "5":
                         tamagotchi.PrintStats();
                         break;
+
+                    //Gör inget
                     case "6":
                         break;
+
+                    //Annars
                     default:
                         Console.WriteLine("-------------------------");
                         Console.WriteLine("Du måste svara 1, 2, 3, 4, 5 el 6!");
@@ -70,24 +84,33 @@ namespace TamagotchiSpel
                 //Stänger programmet om tamagotchin är död
                 if (tamagotchi.GetAlive() == false)
                 {
-                    Console.WriteLine($"{tamagotchi.name} is dead!");
+                    Console.WriteLine($"{tamagotchi.name} died!");
                     break;
                 }
             }
         }
 
+        /// <summary>
+        /// Ställer en fråga som tas in som parameter och returnerar svaret sålänge det inte är tomt
+        /// </summary>
+        /// <param name="question"></param>
+        /// <returns></returns>
         static string ForceFullWord(string question)
         {
             string answer = "";
             while (true)
-            {
+            {   
+                //Skriver ut fråga och tar in svar
                 Console.Write(question);
                 answer = Console.ReadLine();
 
+                //Om svaret är tomt
                 if (answer == "")
                 {
                     Console.WriteLine("Får inte vara tomt!");
                 }
+
+                //Om svaret inte är tomt så bryts man ur ut loopen 
                 else
                 {
                     break;
@@ -126,12 +149,12 @@ namespace TamagotchiSpel
     }
 
     class Tamagotchi
-    {
+    {  
         public string name;
         int hunger = 10;
         int boredom = 10;
         bool isAlive = true;
-        List<string> words = new List<string> { "WAR!!!" };
+        List<string> words = new List<string>();
         Random generator = new Random();
 
         /// <summary>
@@ -139,7 +162,10 @@ namespace TamagotchiSpel
         /// </summary>
         public void Feed()
         {
-            hunger += generator.Next(3, 8);
+            int hungerIncrease = generator.Next(3, 8);
+            hunger += hungerIncrease;
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"{name} har ätit! (Hunger +{hungerIncrease})");
         }
 
 
@@ -147,15 +173,23 @@ namespace TamagotchiSpel
         /// Slumpar ett ord från listan av ord och skriver sedan ut det
         /// </summary>
         public void Hi()
-        {
+        {   
             Console.WriteLine("-------------------------");
+            //Om det finns ord i listan av ord
+            if(words.Count > 0)
+            {
+                //Slumpar ett ord från listan av ord
+                string randomWord = words[generator.Next(words.Count)];
 
-            //Slumpar ett ord från listan av ord
-            string randomWord = words[generator.Next(words.Count)];
+                //Skriver ut den slumpade ordet
+                Console.WriteLine($"{name} sa {randomWord}");
+                ReduceBoredom();
+            }
+            else
+            {
+                Console.WriteLine($"{name} har inte lärt sig några ord än");
+            }
 
-            //Skriver ut den slumpade ordet
-            Console.WriteLine(randomWord);
-            ReduceBoredom();
         }
 
         /// <summary>
@@ -165,6 +199,8 @@ namespace TamagotchiSpel
         public void Teach(string word)
         {
             words.Add(word);
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"{name} har lärt sig ett nytt ord!");
             ReduceBoredom();
         }
 
@@ -190,7 +226,7 @@ namespace TamagotchiSpel
         public void PrintStats()
         {
             Console.WriteLine("-------------------------");
-            Console.WriteLine($"Boredom: {boredom}\nhunger: {hunger}");
+            Console.WriteLine($"Boredom: {boredom}\nHunger: {hunger}");
             if (isAlive)
             {
                 Console.WriteLine($"{name} is alive");
@@ -201,6 +237,10 @@ namespace TamagotchiSpel
             }
         }
 
+        /// <summary>
+        /// Returnerar värdet för "isAlive"
+        /// </summary>
+        /// <returns></returns>
         public bool GetAlive()
         {
             return isAlive;
@@ -211,7 +251,10 @@ namespace TamagotchiSpel
         /// </summary>
         void ReduceBoredom()
         {
-            boredom += generator.Next(3, 8);
+            int boredomIncrease = generator.Next(3, 8);
+            boredom += boredomIncrease;
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"Boredom +{boredomIncrease}");
         }
     }
 }
